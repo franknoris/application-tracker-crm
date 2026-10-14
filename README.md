@@ -4,6 +4,10 @@ A full-stack web app to manage an internship and scholarship search: **organizat
 
 Built as a learning project covering the full stack: a typed REST API, a relational database with migrations, authentication and ownership, automated tests, Docker, and CI.
 
+## Preview
+
+![Application Tracker CRM dashboard](docs/dashboard.png)
+
 ## Features
 
 - Register / log in; each user sees **only their own data** (enforced on every query).
@@ -12,7 +16,7 @@ Built as a learning project covering the full stack: a typed REST API, a relatio
 - Interaction log (email, portal, whatsapp, call, meeting, other).
 - Tasks with due dates, plus "due soon" and "overdue" views.
 - Applications board with switchable **Kanban / List / Table** views, and a **Data** page with tables for every entity.
-- Sidebar navigation and a dashboard with charts (applications by stage, by priority).
+- Dashboard with KPI cards, a 12-month pipeline trend chart, a deal-stage donut, top organizations, and lead-source breakdowns.
 - Timezone-aware deadlines that remember the original time zone.
 - Dark/light theme with an adaptive square logo.
 - One command to run everything: `docker compose up`.
@@ -146,6 +150,8 @@ web/
 docker-compose.yml
 .github/workflows/ci.yml
 Makefile
+docs/
+  dashboard.png        README preview screenshot
 ```
 
 ## Next steps (stretch)
