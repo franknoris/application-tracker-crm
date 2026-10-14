@@ -7,6 +7,7 @@ import Login from "@/pages/Login";
 import Dashboard from "@/pages/Dashboard";
 import Applications from "@/pages/Applications";
 import ApplicationDetail from "@/pages/ApplicationDetail";
+import Data from "@/pages/Data";
 
 function useTheme() {
   const [dark, setDark] = useState(() => {
@@ -50,6 +51,9 @@ function Layout({ children }: { children: ReactNode }) {
             </Link>
             <Link to="/applications" className="hover:underline">
               Applications
+            </Link>
+            <Link to="/data" className="hover:underline">
+              Data
             </Link>
           </nav>
           <div className="flex items-center gap-3">
@@ -105,6 +109,16 @@ export default function App() {
           <Protected>
             <Layout>
               <ApplicationDetail />
+            </Layout>
+          </Protected>
+        }
+      />
+      <Route
+        path="/data"
+        element={
+          <Protected>
+            <Layout>
+              <Data />
             </Layout>
           </Protected>
         }

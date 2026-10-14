@@ -1,4 +1,4 @@
-import type { Application, Interaction, Organization, Stage, Task, Token, User } from "@/types";
+import type { Application, Contact, Interaction, Organization, Stage, Task, Token, User } from "@/types";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
 
@@ -48,6 +48,8 @@ export const api = {
   createOrganization: (data: Partial<Organization>) =>
     request<Organization>("/organizations", { method: "POST", body: JSON.stringify(data) }),
 
+  listContacts: () => request<Contact[]>("/contacts"),
+
   listApplications: (stage?: Stage) =>
     request<Application[]>(`/applications${stage ? `?stage=${stage}` : ""}`),
   getApplication: (id: number) => request<Application>(`/applications/${id}`),
@@ -59,6 +61,7 @@ export const api = {
 
   listInteractions: (applicationId: number) =>
     request<Interaction[]>(`/interactions?application_id=${applicationId}`),
+  listAllInteractions: () => request<Interaction[]>("/interactions"),
   createInteraction: (data: Partial<Interaction>) =>
     request<Interaction>("/interactions", { method: "POST", body: JSON.stringify(data) }),
 
