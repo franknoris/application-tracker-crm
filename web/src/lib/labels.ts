@@ -11,6 +11,28 @@ export const STAGE_COLORS: Record<Stage, string> = {
   withdrawn: "bg-slate-500/15 text-slate-700 dark:text-slate-300",
 };
 
+export const STAGE_LABELS: Record<Stage, string> = {
+  researching: "Researching",
+  contacted: "Contacted",
+  applying: "Applying",
+  submitted: "Submitted",
+  interview: "Interview",
+  offer: "Offer",
+  rejected: "Rejected",
+  withdrawn: "Withdrawn",
+};
+
+export const STAGE_HEX: Record<Stage, string> = {
+  researching: "#64748b",
+  contacted: "#0ea5e9",
+  applying: "#f59e0b",
+  submitted: "#6366f1",
+  interview: "#06b6d4",
+  offer: "#22c55e",
+  rejected: "#f43f5e",
+  withdrawn: "#94a3b8",
+};
+
 export const PRIORITY_COLORS: Record<string, string> = {
   high: "bg-rose-500/15 text-rose-700 dark:text-rose-300",
   medium: "bg-amber-500/15 text-amber-700 dark:text-amber-300",

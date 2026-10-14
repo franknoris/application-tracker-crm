@@ -44,6 +44,7 @@ export interface Application {
   priority?: string | null;
   funding_notes?: string | null;
   notes?: string | null;
+  created_at: string;
 }
 
 export interface Interaction {

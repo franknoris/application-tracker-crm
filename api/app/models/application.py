@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 from sqlalchemy import DateTime, Enum, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from ..db import Base
+from ..db import Base, utcnow
 
 if TYPE_CHECKING:
     from .interaction import Interaction
@@ -42,6 +42,7 @@ class Application(Base):
     priority: Mapped[str | None] = mapped_column(String(20))
     funding_notes: Mapped[str | None] = mapped_column(Text)
     notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, index=True)
 
     user: Mapped[User] = relationship(back_populates="applications")
     organization: Mapped[Organization] = relationship(back_populates="applications")
