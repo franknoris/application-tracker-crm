@@ -47,8 +47,16 @@ export const api = {
   listOrganizations: () => request<Organization[]>("/organizations"),
   createOrganization: (data: Partial<Organization>) =>
     request<Organization>("/organizations", { method: "POST", body: JSON.stringify(data) }),
+  updateOrganization: (id: number, data: Partial<Organization>) =>
+    request<Organization>(`/organizations/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  deleteOrganization: (id: number) => request<void>(`/organizations/${id}`, { method: "DELETE" }),
 
   listContacts: () => request<Contact[]>("/contacts"),
+  createContact: (data: Partial<Contact>) =>
+    request<Contact>("/contacts", { method: "POST", body: JSON.stringify(data) }),
+  updateContact: (id: number, data: Partial<Contact>) =>
+    request<Contact>(`/contacts/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  deleteContact: (id: number) => request<void>(`/contacts/${id}`, { method: "DELETE" }),
 
   listApplications: (stage?: Stage) =>
     request<Application[]>(`/applications${stage ? `?stage=${stage}` : ""}`),
@@ -57,6 +65,7 @@ export const api = {
     request<Application>("/applications", { method: "POST", body: JSON.stringify(data) }),
   updateApplication: (id: number, data: Partial<Application>) =>
     request<Application>(`/applications/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  deleteApplication: (id: number) => request<void>(`/applications/${id}`, { method: "DELETE" }),
   upcoming: (days = 7) => request<Application[]>(`/applications/upcoming?days=${days}`),
 
   listInteractions: (applicationId: number) =>
@@ -64,6 +73,9 @@ export const api = {
   listAllInteractions: () => request<Interaction[]>("/interactions"),
   createInteraction: (data: Partial<Interaction>) =>
     request<Interaction>("/interactions", { method: "POST", body: JSON.stringify(data) }),
+  updateInteraction: (id: number, data: Partial<Interaction>) =>
+    request<Interaction>(`/interactions/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  deleteInteraction: (id: number) => request<void>(`/interactions/${id}`, { method: "DELETE" }),
 
   listTasks: () => request<Task[]>("/tasks"),
   dueTasks: (withinDays = 7) => request<Task[]>(`/tasks/due?within_days=${withinDays}`),
@@ -71,4 +83,5 @@ export const api = {
   createTask: (data: Partial<Task>) => request<Task>("/tasks", { method: "POST", body: JSON.stringify(data) }),
   updateTask: (id: number, data: Partial<Task>) =>
     request<Task>(`/tasks/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  deleteTask: (id: number) => request<void>(`/tasks/${id}`, { method: "DELETE" }),
 };
