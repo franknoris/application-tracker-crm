@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { api, ApiError } from "@/lib/api";
 import type { Application, Organization, Stage } from "@/types";
+import { STAGES } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -11,17 +12,6 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Segmented } from "@/components/ui/segmented";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-
-const STAGES: Stage[] = [
-  "researching",
-  "contacted",
-  "applying",
-  "submitted",
-  "interview",
-  "offer",
-  "rejected",
-  "withdrawn",
-];
 
 type View = "kanban" | "list" | "table";
 

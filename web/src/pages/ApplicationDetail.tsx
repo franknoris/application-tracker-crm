@@ -2,14 +2,13 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "@/lib/api";
 import type { Application, Channel, Interaction, Task } from "@/types";
+import { CHANNELS } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-
-const CHANNELS: Channel[] = ["email", "portal", "whatsapp", "call", "meeting", "other"];
 
 export default function ApplicationDetail() {
   const { id } = useParams();

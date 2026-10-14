@@ -12,6 +12,7 @@ Built as a learning project covering the full stack: a typed REST API, a relatio
 - Interaction log (email, portal, whatsapp, call, meeting, other).
 - Tasks with due dates, plus "due soon" and "overdue" views.
 - Applications board with switchable **Kanban / List / Table** views, and a **Data** page with tables for every entity.
+- Sidebar navigation and a dashboard with charts (applications by stage, by priority).
 - Timezone-aware deadlines that remember the original time zone.
 - Dark/light theme with an adaptive square logo.
 - One command to run everything: `docker compose up`.
